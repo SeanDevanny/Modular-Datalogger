@@ -1,0 +1,328 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+.background{
+    background-image: url("background.png");
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.italics{
+    font-style: italic;
+}
+
+
+
+/*Header*/
+header{
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    top: 0;
+    background-color: rgb(68,70,81);
+    color: aliceblue;
+}
+
+h1{
+    font-family: 'Arial Bold', sans-serif;
+    letter-spacing: 3px;
+    font-weight: bolder;
+  }
+
+/*Main*/
+main{
+    background-color: aliceblue;
+    margin: auto 5vw auto 5vw;
+    width: 90vw;
+}
+
+.Whitespace{
+    position: relative;
+    background-color: aliceblue;
+    padding: 0 2vw 0 2vw;
+    width: 86vw;
+}
+
+    /*Dividers*/
+    .divider{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: aliceblue;
+        padding-top: 1em;
+        height: 3rem;
+    }
+
+    .line{
+        background-color: inherit;
+        border-color: rgb(68,70,81);
+        border-style:  solid;
+        border-bottom: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        height: 20px;
+        border-width: 3px;
+
+        width:  80%;
+    }
+
+    .divider > h2{
+        font-family: 'Arial Bold', Helvetica, sans-serif;
+        position: absolute;
+        background-color: inherit;
+        padding: 5px;
+        margin-top: 0;
+    }
+
+    /*Welcome Page*/
+    #PageWelcome{
+        Margin-top: 100px;
+    }
+
+    article{
+        background-color: inherit;
+    }
+    /*Input area*/
+    #InputContainer{
+        position: relative;
+        background-color: aliceblue;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 20%;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+
+    }
+
+        /*File Upload Area*/
+        .file-area-size-correction{
+            width: 100%;
+            position: relative;
+        }
+        .file-area {
+            width: 50%;
+            position: relative;
+            font-size: 18px;
+            margin-top: 2%;
+        }
+        .file-area input[type=file] {
+            position: absolute;
+            width: 50vw;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .file-area .file-dummy {
+            width: 100%;
+            padding: 50px 30px;
+            border: 2px dashed #ccc;
+            background-color: #fff;
+            text-align: center;
+            transition: background 0.3s ease-in-out;
+        }
+        .file-area .file-dummy .success {
+            display: none;
+        }
+        .file-area:hover .file-dummy {
+            border: 2px dashed #1abc9c;
+        }
+        .file-area input[type=file]:valid + .file-dummy {
+            border-color: #1abc9c;
+        }
+        .file-area input[type=file]:valid + .file-dummy .success {
+            display: inline-block;
+        }
+        .file-area input[type=file]:valid + .file-dummy .default {
+            display: none;
+        }
+
+        /*Troubleshooting Area*/
+        #TroubleshootingInputArea{
+            display: block;
+        }
+
+        #StaticTroubleshootingInputArea{
+            position: relative;
+            
+        }
+
+        #DropdownInputArea{
+            position: relative;
+            display: none;
+        }
+
+        input[type=checkbox]:checked ~ #DropdownInputArea{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            height: 30vh;
+            width: 100%;
+            animation: rotateX 300ms ease-in-out forwards;
+            transform-origin: top;
+        }
+
+        #ReplacedTag, #NewTag{
+            width: 90%;
+            margin: 0 5% 0 5%;
+            height: 2em;
+            font-size: 0.7em;
+            text-overflow: ellipsis;
+        }
+
+        #Append{
+            width: 90%;
+            margin: 0 4% 0 6%;
+        }
+
+        label > h4{
+            margin: 0;
+            padding: 0;
+        }
+
+
+    /*Tables*/
+      #content{
+        top: -300px;
+        position: fixed;
+        display: none;
+        visibility: hidden;
+        background-color: blue;
+        overflow: hidden;
+        height: 0%;
+        width: 0%;
+      }
+
+      tbody td{/*Ensures cells are all equal sizes*/
+        width: 100vw;
+        max-width: 4rem;
+        min-width: 4rem;
+      }
+
+      .TableContainer{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        background-color: aliceblue;
+        margin: auto 1vw auto 1vw;
+
+        scroll-snap-type: x mandatory;
+
+        transform: rotateX(180deg);
+        overflow-x: auto;
+
+        padding: 24px;
+        padding-right: 26px;
+        gap: 24px;
+        scroll-padding: 12px;
+      }
+
+      .TableContainer > .TableData{
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        transform: rotateX(180deg);
+      }
+
+      legend{
+        text-align: left;
+      }
+
+      .TableData{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+      }
+
+      .DataTables{
+        width: 100%;
+      }
+
+      #DataTable tr:nth-child(odd){
+        background-color: whitesmoke;
+      }
+
+      #DataTable tr:hover {
+        background-color: #ddd;
+      }
+
+      #DataTable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #294c67;;
+        color: white;
+      }
+
+        /*Time Selectors*/
+        
+        /* #ProcessedData,
+        #Difference{
+          visibility: collapse;
+        } 
+
+        #dropdownRawDataInput1:checked ~ #RawData{
+          visibility: visible;
+        }
+
+        #dropdownProDataInput1:checked ~ #ProcessedData{
+          visibility: visible;
+        } */
+
+         
+         /*Dropdown Menu*/
+         .Space-Between{
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+         }
+
+         .Padding{
+          padding: 0 5% 0 5%;
+         }
+
+         .dropdown{
+            display: block;
+         }
+
+         .dropdownmenu{
+          position: absolute;
+          display: none;
+         }
+
+         .dropdown:hover > .dropdownmenu{
+            background-color: azure;
+            top: auto;
+            left: auto;
+            width: auto;
+            perspective: 1000px;
+            display: block;
+            animation: rotateX 300ms ease-in-out forwards;
+            transform-origin: top;
+            color: black;
+            border-end-end-radius: 10px;
+         }
+  
+
+@keyframes rotateX {
+   0% {
+     opacity: 0;
+     transform: rotateX(-90deg);
+   }
+   50% {
+     transform: rotateX(-10deg);
+   }
+   100% {
+     opacity: 1;
+     transform: rotateX(0deg);
+   }
+ }

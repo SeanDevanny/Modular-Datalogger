@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js" lang="en">   <!-- lang="en" language is set to english. This helps screen readers with your page -->
+
+<head>
+  <meta charset="utf-8">   <!-- The charset attribute specifies the character encoding of the page, and, nowadays, UTF-8 is the only encoding supported by most browsers. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Data Logger Online</title>
+  <link rel="icon" href="icon.png">
+  <meta name="description" content="This webpage was designed for use by Modular Automationg used to extract data from Allen-Bradley PLC L5X(XML) files alongside ">   <!-- An important meta element for accessibility and SEO is the description definition. The value of the content attribute is used by search engines to provide a description of your page. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport definition tells the browser how to render the page. Including one betters visual accessibility on mobile, and improves SEO (search engine optimization)-->
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/initial.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script> <!--Unused-->
+  <script src="js/vendor/modernizr-3.11.2.min.js" defer></script>
+  <script src="js/plugins.js" defer></script>
+  <script src="js/TableBuilder.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <!-- Navigation is a core part of accessibility, and screen readers rely on you to provide the structure of your page. This is accomplished with semantic HTML elements. (header and main) -->
+<div class="background"></div>
+<main>
+    <div class="Whitespace">
+      <div id="PageWelcome">
+        <article>
+          <div class="divider">
+            <h2>Welcome</h2>
+            <div class="line"></div>
+          </div>
+          <h3>L5X/XML Online Datalogger</h3>
+          <p>The function of this webpage is to extract data, rung comments and then graph data</p>
+          <p>from Allen-Bradley PLC's custom Datalogger AOI</p>
+          <p>Drag and drop your exported L5X file in the Input area below or click the upload button</p>
+          <br>
+          <p>If you run into trouble, please refer to the about section <a>here</a> or via the navbar at the top of the screen</p>
+        </article>
+      </div>
+      <div class="divider">
+        <h2>Input Area</h2>
+        <div class="line"></div>
+      </div>
+      <div id="InputContainer">
+        <form method="post" enctype="multipart/form-data">
+          <div class="file-area">
+            <label id="FileInputLabel" for="FileInput">Click to upload or drag and drop your L5X file below</label>
+            <input id="FileInput" type="file" required/>
+            <div class="file-dummy">
+                <span class="default">Click to select a file, or drag it here</span>
+                <span class="success">Great, your file is selected</span>
+            </div>
+          </div><br>
+          <input id="SubmitFile" type="submit" value="Upload File"/>
+        </form>
+        <div id="TroubleshootingInputArea">
+
+            <h3>Comments not showing up?</h3>
+            <p>Click <a>here</a> for more information.</p>
+            <br>
+            <p class="italics">Otherwise,</p>
+            <label id="AppendCheckboxLabel" for="AppendCheckbox">check this box and proceed to append the document</label>
+            <input id="AppendCheckbox" type="checkbox"/>
+
+          <form id="DropdownInputArea">
+              <label id="ReplacedTagLabel" for="ReplacedTag"><h4>Input the tag to replace here</h4></label>
+              <input id="ReplacedTag" type="text" placeholder="Full tag-name is required" required/>
+              <label id="NewTagLabel" for="NewTag"><h4>Input the tag you wish to replace it with here</h4></label>
+              <input id="NewTag" type="text" placeholder="The repaced tag will be replaced exactly with the text entered" required/>
+              <input id="Append" type="submit" value="Append File"/>
+          </form>
+          
+        </div>
+      </div>
+      <div class="divider">
+        <h2>Graphs</h2>
+        <div class="line"></div>
+      </div>
+      <div class="divider">
+        <h2>Data Tables</h2>
+        <div class="line"></div>
+      </div>
+      <div id="TableContainer" class="TableContainer">
+        <fieldset id='content'>
+            <legend class="bold-text"></legend>
+            <table id='DataTable' class="DataTables" cellpadding='10px' style="text-align:left;">
+                <thead>
+                    <tr>
+                        <th>Value</th>
+                        <th><div class="dropdown">Time<div class="dropdownmenu"><br>
+                          <div class="Space-Between Padding"><label id="dropdownRawDataInputLabel1" for="dropdownRawDataInput1">Raw data               </label><input id="dropdownRawDataInput1" type="radio" name="TimeSelect" value="Raw"       checked/></div><br>
+                          <div class="Space-Between Padding"><label id="dropdownProDataInputLabel1" for="dropdownProDataInput1">Processed data         </label><input id="dropdownProDataInput1" type="radio" name="TimeSelect" value="Processed" /></div><br>
+                          <div class="Space-Between Padding"><label id="dropdownDifDataInputLabel1" for="dropdownDifDataInput1">Difference between data</label><input id="dropdownDifDataInput1" type="radio" name="TimeSelect" value="Difference"/></div><br>
+                          </div></div></th>
+                        <th><div class="dropdown">Time<div class="dropdownmenu"><br>
+                          <div class="Space-Between Padding"><label id="dropdownRawDataInputLabel2" for="dropdownRawDataInput2">Raw data               </label><input id="dropdownRawDataInput2" type="radio" name="TimeSelect" value="Raw"        /></div><br>
+                          <div class="Space-Between Padding"><label id="dropdownProDataInputLabel2" for="dropdownProDataInput2">Processed data         </label><input id="dropdownProDataInput2" type="radio" name="TimeSelect" value="Processed"  /></div><br>
+                          <div class="Space-Between Padding"><label id="dropdownDifDataInputLabel2" for="dropdownDifDataInput2">Difference between data</label><input id="dropdownDifDataInput2" type="radio" name="TimeSelect" value="Difference" /></div><br>
+                          </div></div></th>
+                        <th><div class="dropdown">Time<div class="dropdownmenu"><br>
+                          <div class="Space-Between Padding"><label id="dropdownRawDataInputLabel3" for="dropdownRawDataInput3">Raw data               </label><input id="dropdownRawDataInput3" type="radio" name="TimeSelect" value="Raw"        /></div><br>
+                          <div class="Space-Between Padding"><label id="dropdownProDataInputLabel3" for="dropdownProDataInput3">Processed data         </label><input id="dropdownProDataInput3" type="radio" name="TimeSelect" value="Processed"  /></div><br>
+                          <div class="Space-Between Padding"><label id="dropdownDifDataInputLabel3" for="dropdownDifDataInput3">Difference between data</label><input id="dropdownDifDataInput3" type="radio" name="TimeSelect" value="Difference" /></div><br>
+                          </div></div></th>
+                        <th>Comment</th>
+                      </tr>
+                </thead>
+                <tbody>
+                  <colgroup>
+                    <col id="Value"         span="1">
+                    <col id="RawData"       span="1">
+                    <col id="ProcessedData" span="1">
+                    <col id="Difference"    span="1">
+                    <col id="Comment"       span="1">
+                  </colgroup>
+
+                </tbody>
+            </table>
+        </fieldset>
+      </div>
+    </div>
+  <div id="Footer">
+
+  </div>
+</main>
+<header>
+  <h1>Reading Data from XML Files</h1>
+  <nav>
+
+  </nav>
+</header>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!-- <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
+</body>
+
+</html>
