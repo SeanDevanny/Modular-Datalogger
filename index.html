@@ -55,10 +55,10 @@
         <div class="line"></div>
       </div>
       <div id="InputContainer">
-        <form method="post" enctype="multipart/form-data">
+        <form id="FileForm" method="post" enctype="multipart/form-data" onsubmit="getXMLFiles(event)" action="javascript:void(0);" >
           <div class="file-area">
             <label id="FileInputLabel" for="FileInput">Click to upload or drag and drop your L5X file below</label>
-            <input id="FileInput" type="file" required/>
+            <input id="FileInput" type="file" accept=".L5X" required/>
             <div class="file-dummy">
                 <span class="default">Click to select a file, or drag it here</span>
                 <span class="success">Great, your file is selected</span>

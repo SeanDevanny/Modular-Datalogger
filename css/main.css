@@ -301,8 +301,6 @@ main{
 
          .dropdown:hover > .dropdownmenu{
             background-color: azure;
-            top: auto;
-            left: auto;
             width: auto;
             perspective: 1000px;
             display: block;
