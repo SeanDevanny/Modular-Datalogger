@@ -15,8 +15,9 @@ function getXMLFiles(event){
         /* let data = e.target.result; */
         //   document.getElementById('outputDiv').innerHTML = e.target.result;
           console.log(e.target.result);//why am I slicing 3 charaters from the string? No idea. The file reader for some reason adds the 3 characters ï»¿ to the front of an .L5X XML file because it's almost as dumb as me. This took too long to find. I hate it here. 
+          let cut = e.target.result.indexOf("<?xml");
           let parser = new DOMParser();
-          let xml = parser.parseFromString(e.target.result.slice(3), "application/xml");
+          let xml = parser.parseFromString(e.target.result.slice(cut), "application/xml");
           console.log(xml);
           buildDataLoggerResultset(xml);
         };
