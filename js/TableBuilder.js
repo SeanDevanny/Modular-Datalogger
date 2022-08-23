@@ -190,7 +190,7 @@ function buildDataLoggerResultset(x){
 
                 let SearchTerm = `EQU(${TagName},${Value})`;
                 if(((text.textContent.indexOf(SearchTerm)) !== -1)&&(comment)){//searching the string until correct run is found
-                    column.innerText = comment.textContent;//constructing the new column
+                    column.innerText = comment.textContent.replace(/__/g,'');//constructing the new column... .replace is cleaning up the comments by removing buggy lines
                     row.appendChild(column);
                 }
             });
