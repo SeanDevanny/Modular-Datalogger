@@ -2,6 +2,7 @@
 
 function getXMLFiles(event){
     //this.preventDefault();
+    JSC.Chart('chartDiv', {});
     if (event === undefined) {
         console.log(inVar.not)
     }
