@@ -7,6 +7,9 @@ function getXMLFiles(event){
     }
 
     var file = document.getElementById('FileInput');
+    let sucessmessage = document.getElementById('successmessage');
+    console.log(file.files[0].name);
+    sucessmessage.innerHTML = `Uploaded file is <br>${file.files[0].name}`;
 
     if (file.files.length) {
         var reader = new FileReader();
