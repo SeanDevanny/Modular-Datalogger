@@ -28,7 +28,7 @@ async function buildtable(x, Dataset){
     //     .css({'position': 'static'})
     //     ;
 
-    $('.divider').css({'visibility': 'visible'}).css({'height': '3rem'});
+    $('.divider').css({'visibility': 'visible'}).css({'height': '3rem'});//using jQuery to add back in the hidden divider segments, rest of css defined in main.css
     
     let field = document.getElementById(`content${i}`);
     console.log(field);

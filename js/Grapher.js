@@ -1,22 +1,9 @@
 async function Chartbuilder(object){
 
-    let series = [{}];
-    let refinedobject = {
-        type: 'pie',
-        // series: [
-        //     {
-        //        name:`${object[0].Name}`,
-        //        points: [
-        //           {x: 0, y: 0}
-        //        ]
-        //     }
-        // ]
-    };
-
     console.log(object);
     console.log(`%c ${Object.keys(object).length}`,'background: #222; color: #bada55');
     for(let i in object){
-
+        //copying chart div for graphs to populate
     // Get the element
     var elem = document.querySelector('#graphcontainer');                
 
@@ -30,10 +17,14 @@ async function Chartbuilder(object){
     // Inject it into the DOM
     elem.after(clone);
 
-        let points = [{}];
-        let series = [{}];
-        let refinedobject = {
+        let points = [{}]; //initialises and clears object array on each iteration
+        let series = [{}]; //initialises and clears object array on each iteration
+        let refinedobject = { //initialises and clears object on each iteration
             title_label_text: `${object[i].Name}`,
+            annotations: [{
+                label_text: 'How long cycle spends on each value',
+                position: 'bottom left'
+            }],
             type: 'pie',
             // series: [
             //     {
@@ -44,21 +35,17 @@ async function Chartbuilder(object){
             //     }
             // ]
         };
-        series[0] = {name: object[i].Name};
-        console.log(refinedobject);
-        console.log(series);
-        console.log(object[i].Values);
-        for(let j in object[i].Values){
+        series[0] = {name: object[i].Name};//adding the data's name to chart
+        
+        for(let j in object[i].Values){//x is a string value (preferably) and y is a numeric value
             points[j] = {
                 x:  object[i].Values[j],
                 y:  object[i].TimeDifference[j]
             };
         }
-        console.log(points,'background: #222; color: #bada55');
-        series[0].points = points;
-        refinedobject.series = series;
-        console.log(refinedobject);
-        JSC.Chart(`graphcontainer${i}`, refinedobject);
+        series[0].points = points;//populating points object array into series object array under name 
+        refinedobject.series = series; //populating series object array into refinedobject
+        JSC.Chart(`graphcontainer${i}`, refinedobject); //grahping chart 
         }
     
     
