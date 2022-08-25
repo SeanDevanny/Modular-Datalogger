@@ -62,6 +62,14 @@ main{
         height: 3rem;
     }
 
+    .divider:nth-child(3),
+    .divider:nth-child(4),
+    .divider:nth-child(5),
+    .divider:nth-child(6){
+      visibility: hidden;
+      height: 0;
+    }
+
     .line{
         background-color: inherit;
         border-color: rgb(68,70,81);
@@ -196,7 +204,8 @@ main{
 
 
     /*Tables*/
-      #content{
+      #content,
+      #graphcontainer{
         top: -300px;
         position: fixed;
         display: none;

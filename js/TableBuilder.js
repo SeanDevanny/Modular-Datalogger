@@ -16,6 +16,19 @@ async function buildtable(x, Dataset){
 
     // Inject it into the DOM
     elem.after(clone);
+
+    // $('.divider').css({'display': 'flex'})
+    //     .css({'flex-direction': 'row'})
+    //     .css({'justify-content': 'center'})
+    //     .css({'align-items': 'center'})
+    //     .css({'background-color': 'aliceblue'})
+    //     .css({'padding-top': '1em'})
+    //     .css({'height': '3rem'})
+    //     .css({'visiblity': 'visible'})
+    //     .css({'position': 'static'})
+    //     ;
+
+    $('.divider').css({'visibility': 'visible'}).css({'height': '3rem'});
     
     let field = document.getElementById(`content${i}`);
     console.log(field);
