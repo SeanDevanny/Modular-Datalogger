@@ -25,17 +25,27 @@ header{
     position: fixed;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
     top: 0;
     background-color: rgb(68,70,81);
     color: aliceblue;
 }
 
-h1{
+h1,
+.navbutton{
     font-family: 'Arial Bold', sans-serif;
     letter-spacing: 3px;
     font-weight: bolder;
   }
+
+.navbutton{
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  border: hidden;
+  font-size: 1.5rem;
+}
 
 /*Main*/
 main{
