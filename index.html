@@ -47,9 +47,9 @@
           <h3>L5X/XML Online Datalogger</h3>
           <p>The function of this webpage is to extract data, rung comments and then graph data</p>
           <p>from Allen-Bradley PLC's custom Datalogger AOI</p>
-          <p>Drag and drop your exported L5X file in the Input area below or click the upload button</p>
+          <p>Drag and drop your exported L5X file in the Input area below then click the upload button</p>
           <br>
-          <p>If you run into trouble, please refer to the about section <a>here</a> or via the navbar at the top of the screen</p>
+          <p>If you run into trouble, please refer to the about section <a href="about.html">here</a> or via the navbar at the top of the screen</p>
         </article>
       </div>
       <div class="divider">
@@ -71,13 +71,13 @@
         <div id="TroubleshootingInputArea">
 
             <h3>Comments not showing up?</h3>
-            <p>Click <a>here</a> for more information.</p>
+            <p>Click <a href="about.html">here</a> for more information.</p>
             <br>
             <p class="italics">Otherwise,</p>
             <label id="AppendCheckboxLabel" for="AppendCheckbox">check this box and proceed to append the document</label>
             <input id="AppendCheckbox" type="checkbox"/>
 
-          <form id="DropdownInputArea">
+          <form id="DropdownInputArea" method="post" enctype="multipart/form-data" onsubmit="" action="javascript:void(0);">
               <label id="ReplacedTagLabel" for="ReplacedTag"><h4>Input the tag to replace here</h4></label>
               <input id="ReplacedTag" type="text" placeholder="Full tag-name is required" required/>
               <label id="NewTagLabel" for="NewTag"><h4>Input the tag you wish to replace it with here</h4></label>
@@ -137,18 +137,19 @@
         </fieldset>
       </div>
     </div>
-  <div id="Footer">
-
-  </div>
+  <div id="Footer"></div>
 </main>
 <header>
   <h1>Reading Data from XML Files</h1>
   <nav>
-    <button class="navbutton" onclick="window.location.href='#PageWelcome';">
-      TOP
+    <button id="ABOUT" class="navbutton" onclick="window.location.href='about.html';">
+      ABOUT
     </button>
-    <button class="navbutton" onclick="window.location.href='#Footer';">
-      BOTTOM
+    <button id="TOP" class="navbutton" onclick="window.location.href='#PageWelcome';">
+      &lt;
+    </button>
+    <button id="BOTTOM" class="navbutton" onclick="window.location.href='#Footer';">
+      &lt;
     </button>
   </nav>
 </header>

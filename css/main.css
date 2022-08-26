@@ -10,9 +10,16 @@ body{
     width: 100vw;
 }
 
-.italics{
+.italics,
+.disclaimer{
     font-style: italic;
 }
+.disclaimer{
+  font-weight: bold;
+  font-size: 0.9em;
+  color: rgb(130, 130, 130);
+}
+
 
 input[type="radio"],
 input[type="checkbox"]{
@@ -40,11 +47,22 @@ h1,
   }
 
 .navbutton{
+  cursor: pointer;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   border: hidden;
   font-size: 1.5rem;
+}
+
+#TOP{
+  padding-left: 0.8rem;
+  font-size: 2rem;
+  transform: rotate(90deg);
+}
+#BOTTOM{
+  font-size: 2rem;
+  transform: rotate(270deg);
 }
 
 /*Main*/
@@ -59,6 +77,15 @@ main{
     background-color: aliceblue;
     padding: 0 2vw 0 2vw;
     width: 86vw;
+}
+
+#Footer{
+  position: relative;
+  background-color: rgb(68,70,81);
+  height: 1rem;
+  width: 100%;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
     /*Dividers*/

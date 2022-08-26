@@ -1,0 +1,92 @@
+<!doctype html>
+<html class="no-js" lang="en">   <!-- lang="en" language is set to english. This helps screen readers with your page -->
+
+<head>
+  <meta charset="utf-8">   <!-- The charset attribute specifies the character encoding of the page, and, nowadays, UTF-8 is the only encoding supported by most browsers. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Data Logger Online</title>
+  <link rel="icon" href="icon.png">
+  <meta name="description" content="This webpage was designed for use by Modular Automation and is used to extract data from Allen-Bradley PLC L5X(XML) files">   <!-- An important meta element for accessibility and SEO is the description definition. The value of the content attribute is used by search engines to provide a description of your page. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport definition tells the browser how to render the page. Including one betters visual accessibility on mobile, and improves SEO (search engine optimization)-->
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/initial.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!-- Navigation is a core part of accessibility, and screen readers rely on you to provide the structure of your page. This is accomplished with semantic HTML elements. (header and main) -->
+<div class="background"></div>
+<main>
+    <div class="Whitespace">
+      <div id="PageWelcome">
+        <article>
+          <div class="divider">
+            <h2>About</h2>
+            <div class="line"></div>
+          </div>
+          <h3>L5X/XML Online Datalogger</h3>
+          <p>The function of this webpage is to extract data, rung comments and then graph data</p>
+          <p>from Allen-Bradley PLC's custom Datalogger AOI</p>
+          <p>Drag and drop your exported L5X file in the Input area below then click the upload button</p>
+          <br>
+          <p>When you're finished here, you may refer to the home page <a href="index.html">here</a> or via the navbar at the top of the screen</p>
+          <br>
+          <p>The pie chart displays sequence steps and how much of the cycle time they take up proportionately</p>
+          <p>In other words, if you wish to take time off of a cycle, start with the steps that take up the largest area of the pie chart</p>
+          <br>
+          <p>The datalogger takes an L5X PLC file that's running the datalogger AOI and extracts the data along with related comments.</p>
+          <p>Sometimes these comments don't appear. If this happens with your file, you'll need to append the file</p>
+          <br>
+          <h3>How to append your file</h3>
+          <p>You must first get the actual tag name of the value you wish to monitor for the tags</p>
+          <p>The commentless tag is likely aliased when it was fed to the datalogger AOI</p>
+          <p>You should go to your PLC code and use the tag-name the datalogger provides you upon initial upload to find the actual tag name of the function monitored</p>
+          <p>Trace the aliased tag back to the source to get the actual tag name</p>
+          <br>
+          <p>Now you have the actual tag name you're going to want to append the document</p>
+          <p>Before proceeding, ensure the file input box reads something like "Uploaded file is FileName.L5X"</p>
+          <br>
+          <p>Populate the first input box with the old tag name (i.e. the one that was displaying without comments)</p>
+          <p>Then populate the second input box with the tag it was aliased as and hit the "append" button</p>
+          <p class="disclaimer">Make sure you use the full tag name. This will not work if only a part of either tag is used</p>
+        </article>
+      </div>
+      <br>
+    </div>
+  <div id="Footer"></div>
+</main>
+<header>
+  <h1>Reading Data from XML Files</h1>
+  <nav>
+    <button id="HOME" class="navbutton" onclick="window.location.href='index.html';">
+      HOME
+    </button>
+    <button id="TOP" class="navbutton" onclick="window.location.href='#PageWelcome';">
+      &lt;
+    </button>
+    <button id="BOTTOM" class="navbutton" onclick="window.location.href='#Footer';">
+      &lt;
+    </button>
+  </nav>
+</header>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!-- <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
+</body>
+
+</html>
